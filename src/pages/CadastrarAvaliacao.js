@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, SafeAreaView } from 'react-native';
 import ChatBot from 'react-native-chatbot';
-import { useEffect } from 'react/cjs/react.production.min';
 
 class CadastrarAvaliacao extends Component {
   componentDidMount() {
@@ -9,9 +8,7 @@ class CadastrarAvaliacao extends Component {
   }
 
   handleEnd({ steps, values }) {
-    // console.log(steps);
-    // console.log("\n")
-    console.log(values);
+    // console.log(values);
   }
 
   render() {
@@ -528,27 +525,4 @@ const steps = [
 
 ];
 
-export default CadastrarAvaliacao;
-
-
-// export default function CadastrarAvaliacao(){
-//     useEffect({
-//       this.handleEnd = this.handleEnd.bind(this)
-//     }) 
-    
-//     handleEnd({ steps, values }) {
-//       // console.log(steps);
-//       // console.log(values);
-//       alert(`Chat handleEnd callback! Number: ${values[0]}`)
-//     }
-
-//     return(
-//         <SafeAreaView>
-//             <ChatBot steps={steps} />
-//         </SafeAreaView>
-//     )
-// }
- 
-
- 
-
+export default CadastrarAvaliacao
