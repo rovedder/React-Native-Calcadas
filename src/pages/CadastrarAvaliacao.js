@@ -504,9 +504,20 @@ const steps = [
         ], 
        },
        
+       {
+        id: '67',
+        message: 'A avaliação chegou ao fim! Deseja enviá-la?',
+        trigger: '68',
+    },
+     {
+            id: '68',
+            options: [
+                { value: 1, label: 'SIM' , trigger: '69' },
+              ], 
+        },
 
        {
-        id:'67',
+        id:'69',
         message: 'Obrigado pela avaliação!',
         end:true
       }
