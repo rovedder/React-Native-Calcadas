@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import { View, Text, SafeAreaView } from 'react-native';
 import ChatBot from 'react-native-chatbot';
@@ -7,24 +8,32 @@ class CadastrarAvaliacao extends Component {
     this.handleEnd = this.handleEnd.bind(this);
   }
 
-  handleEnd({ steps, values }) {
-    // console.log(values);
+  handleEnd({ steps }) {
+    steps.map((element) => {
+      console.log(element.id)
+      console.log(element.message)
+      console.log(element.value)  
+    })
+  }
+
+  registerApi(review) {
+    // axios.post("localhost:8080/review", review)
   }
 
   render() {
     return (
-        <SafeAreaView>
-             <ChatBot 
-              handleEnd={this.handleEnd}
-              steps={steps} 
-             />
-         </SafeAreaView>
-    );
+      <SafeAreaView>
+          <ChatBot 
+            handleEnd={this.handleEnd}
+            steps={steps} 
+          />
+      </SafeAreaView>
+    )
   }
 }
 
 const steps = [
-  {
+    {
       id:'0',
       message:'Olá, seja bem-vindo a avaliação de calçadas de Santa maria! Informe o CEP:',
       trigger:'1'
@@ -32,10 +41,10 @@ const steps = [
     {
       id:'1',
       user:true,
-      trigger:'4'
+      trigger:'2'
     },
     {
-      id:'4',
+      id:'2',
       message:'A calçada está pavimentada?',
       trigger:'5'
     },
@@ -502,6 +511,7 @@ const steps = [
      {
       id: '65',
       message: 'A sinalização tátil de alerta é antiderrapante, com relevo cor contrastante?',
+      value: '',
       trigger: '66',
   },
 
@@ -515,14 +525,12 @@ const steps = [
         { value: 5, label: 'NÃO TENHO CERTEZA', trigger: '67' },
       ], 
      },
-     
 
      {
       id:'67',
       message: 'Obrigado pela avaliação!',
       end:true
     }
-
 ];
 
 export default CadastrarAvaliacao

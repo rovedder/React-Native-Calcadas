@@ -27,8 +27,6 @@ export default function MenuPrincipal({ navigation }){
     );
 }
 
-
-
 const styles = StyleSheet.create({
     container: {
       flex: 1,

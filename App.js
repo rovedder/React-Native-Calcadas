@@ -8,6 +8,7 @@ import { StyleSheet } from 'react-native';
 import CadastrarAvaliacao from './src/pages/CadastrarAvaliacao';
 import VisualizarAvaliacoes from './src/pages/VisualizarAvaliacoes';
 import MenuPrincipal from './src/pages/MenuPrincipal';
+import ExportarAvaliacao from './src/pages/ExportarAvaliacao';
 
 
 const Stack = createStackNavigator();
@@ -22,6 +23,8 @@ export default function App() {
         options={{title: "Cadastrar Avaliação"}} />
         <Stack.Screen  name="VisualizarAvaliacoes" component={VisualizarAvaliacoes}
        options={{title: "Visualizar Avaliações"}} />
+       <Stack.Screen  name="ExportarAvaliacao" component={ExportarAvaliacao}
+       options={{title: "Exportar Avaliações"}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
